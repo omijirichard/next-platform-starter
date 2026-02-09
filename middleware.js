@@ -16,7 +16,7 @@ export function middleware(request) {
   
   // Logging for demonstration (in production, use proper logging service)
   console.log(`[Middleware] ${request.method} ${pathname} - ${new Date().toISOString()}`);
-  customHeaderValue = request.headers.get("X-CSRF-Token");
+  let customHeaderValue = request.headers.get("X-CSRF-Token");
   if (customHeaderValue) {
     console.log(`[Middleware] Received X-CSRF-Token:: ${customHeaderValue}`);
   }
