@@ -6,8 +6,8 @@ export function middleware(request) {
   // Add security headers
   response.headers.set('X-Frame-Options', 'DENY');
   response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
+  //response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Access-Control-Allow-Origin', '*');
   // Add custom header to track middleware execution
   response.headers.set('X-Middleware-Executed', 'true');
   
